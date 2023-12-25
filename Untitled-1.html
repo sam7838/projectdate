@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Invitation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+            background-color: #e0f7fa; /* Set initial background color */
+            transition: background-color 0.5s ease-in-out; /* Smooth transition effect */
+        }
+
+        header {
+            background-color: #ffcccb;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        footer {
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 0 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out; /* Smooth button color transition */
+        }
+
+        pre {
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Special Date Invitation</h1>
+    </header>
+
+    <main>
+        <!-- Cute Bunny ASCII Art -->
+        <pre>
+  (\(\ 
+  (-.-)
+ o_(")(")
+        </pre>
+
+        <p>Hey beautiful,</p>
+        <p>I've been thinking about spending some quality time together. Would you like to go on a date with me?</p>
+
+        <button onclick="respond('Yes')" onmouseover="changeBackgroundColor('#a5d6a7')" onmouseout="changeBackgroundColor('#e0f7fa')">Yes</button>
+        <button id="noButton" onmouseover="relocateNoButton()">No</button>
+
+        <p id="response"></p>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Your Name. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript for Button Actions, Background Color Change, and Audio Playback -->
+    <script>
+        function respond(answer) {
+            document.getElementById("response").innerText = "Your response: " + answer;
+
+            if (answer === 'Yes') {
+                // Soft piano music (original audio file)
+                playSound();
+            }
+        }
+
+        function relocateNoButton() {
+            var noButton = document.getElementById("noButton");
+
+            // Calculate random position
+            var randomX = Math.floor(Math.random() * window.innerWidth - noButton.clientWidth);
+            var randomY = Math.floor(Math.random() * window.innerHeight - noButton.clientHeight);
+
+            // Set new position
+            noButton.style.position = "absolute";
+            noButton.style.left = randomX + "px";
+            noButton.style.top = randomY + "px";
+        }
+
+        function changeBackgroundColor(color) {
+            document.body.style.backgroundColor = color;
+        }
+
+        function playSound() {
+            // Soft piano music (original audio file)
+            var audio = new Audio('https://www.soundhelix.com/examples/mp3/SoundHelix-SoftPiano.mp3');
+            
+            // Trigger playback after user interaction
+            audio.play().catch(function(error) {
+                console.error("Autoplay failed:", error);
+            });
+        }
+    </script>
+
+</body>
+</html>
+
+
+
+
+
+
